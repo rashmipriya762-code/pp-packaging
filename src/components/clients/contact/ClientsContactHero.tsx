@@ -47,8 +47,7 @@ export function ClientsContactHero() {
                {/* Circle treatment inside */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] aspect-square bg-[#E4D5C7] rounded-full blur-[60px] opacity-70" />
             </div>
-            
-            <div className="relative w-full h-full min-h-[400px] z-10 p-10 lg:p-12">
+            <div className="relative w-full h-full min-h-[400px] z-10 p-10 lg:p-12 overflow-hidden">
               <Image 
                 src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
                 alt="P&P Packaging Boxes" 

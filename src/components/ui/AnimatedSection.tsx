@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView, Variants } from "framer-motion";
-import { useRef } from "react";
+import { motion, Variants } from "framer-motion";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -21,14 +20,11 @@ export function AnimatedSection({
   direction = "up",
   once = true,
 }: AnimatedSectionProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: "-80px" });
-
   const variants: Variants = {
     hidden: {
       opacity: 0,
       y: direction === "up" ? 40 : 0,
-      x: direction === "left" ? -40 : direction === "right" ? 40 : 0,
+      x: 0, // Disabled horizontal shifts to prevent layout overflow scrollbars
     },
     visible: {
       opacity: 1,
@@ -44,9 +40,9 @@ export function AnimatedSection({
 
   return (
     <motion.div
-      ref={ref}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once, margin: "-80px" }}
       variants={variants}
       className={className}
     >
@@ -64,9 +60,6 @@ export function AnimatedContainer({
   className?: string;
   staggerDelay?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-
   const containerVariants: Variants = {
     hidden: {},
     visible: {
@@ -78,9 +71,9 @@ export function AnimatedContainer({
 
   return (
     <motion.div
-      ref={ref}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
       variants={containerVariants}
       className={className}
     >
