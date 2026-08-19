@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ── Tailwind v4 exact design tokens ─────────────────────────── */
+@theme {
+  /* Colors - Non-negotiable exact values */
+  --color-cream:        #F4ECE0;
+  --color-cream-soft:   #FBF8F3;
+  --color-teal-900:     #16323D;
+  --color-teal-800:     #1E4653;
+  --color-gold-600:     #C1872E;
+  --color-gold-400:     #D9A44F;
+  --color-text-dark:    #1C2B33;
+  --color-text-muted:   #5C6B72;
+  --color-white:        #FFFFFF;
+
+  /* Fonts */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Spacing constraints */
+  --spacing-section-py-desktop: 5rem; /* ~80px */
+  --spacing-section-py-mobile: 3rem;  /* ~48px */
+}
+
+/* ── CSS custom properties ────────────────────────────────────── */
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+html { scroll-behavior: auto; }
+
+body {
+  font-family: var(--font-body);
+  color: #1C2B33;
+  background-color: #F4ECE0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Regular weight upright serif default */
+  line-height: 1.15;
+  color: #1C2B33;
+}
+
+* { box-sizing: border-box; }
+::selection { background: #C1872E; color: #fff; }
+
+/* ── Typography utilities ─────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* Emphasis phrases in headings */
+.heading-emphasis {
+  font-style: italic;
+  color: #C1872E;
+}
+
+/* ── Layout utilities ─────────────────────────────────────────── */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (min-width: 1024px) {
+  .container-custom { padding: 0 2.5rem; }
+}
+
+/* ── UI Elements ──────────────────────────────────────────────── */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; /* Gap before arrow */
+  border-radius: 9999px; /* Fully rounded */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 minimum */
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-teal {
+  background-color: #16323D;
+  color: #FFFFFF;
+}
+.btn-teal:hover {
+  background-color: #1E4653;
+  transform: translateY(-1px);
+}
+
+.btn-gold {
+  background-color: #C1872E;
+  color: #FFFFFF;
+}
+.btn-gold:hover {
+  background-color: #a87528;
+  transform: translateY(-1px);
+}
+
+/* Cards & Images border radius */
+.rounded-card {
+  border-radius: 1.5rem; /* ~24px */
+}
+
+/* ── Scrollbar hide ───────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
