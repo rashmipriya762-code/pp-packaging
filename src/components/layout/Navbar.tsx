@@ -55,7 +55,13 @@ const navLinks: NavLink[] = [
       { label: "Sweet Boxes", href: "/boxes/" },
     ],
   },
-  { label: "Our Clients", href: "/clients" },
+  {
+    label: "Our Clients",
+    href: "/clients",
+    dropdown: [
+      { label: "Contact Us", href: "/clients/contact-us" },
+    ],
+  },
   { label: "Blogs", href: "/blogs" },
 ];
 
