@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 };
 
 const industryCollection = [
-  { name: "Corporates", desc: "Professional gifting and event bags for corporate branding.", href: "/collections/corporates", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" },
-  { name: "Retail Stores & Brands", desc: "High-quality shopping bags that elevate the customer retail experience.", href: "/collections/retail", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600" },
-  { name: "Sweet Industry", desc: "Festive and traditional bags perfectly sized for sweet boxes.", href: "/collections/sweet-industry", image: "https://images.unsplash.com/photo-1606323497184-754d9c73361a?auto=format&fit=crop&q=80&w=600" },
-  { name: "Cake Industry", desc: "Wide-base bags designed specifically to keep cake boxes flat and secure.", href: "/collections/cake-industry", image: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=600" },
-  { name: "Restaurants & Cafes", desc: "Reliable takeaway and delivery bags for the food and beverage sector.", href: "/collections/restaurants", image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600" },
-  { name: "Jewellers", desc: "Luxurious, compact, and highly finished bags for precious jewelry items.", href: "/collections/jewellers", image: "https://images.unsplash.com/photo-1599643478514-4a4208006eb4?auto=format&fit=crop&q=80&w=600" },
-  { name: "Fashion Designers", desc: "Bespoke, trend-setting packaging that matches high-end fashion identities.", href: "/collections/fashion", image: "https://images.unsplash.com/photo-1550614000-4b95dd2458bf?auto=format&fit=crop&q=80&w=600" },
-  { name: "Events", desc: "Bulk, customizable goodie bags and welcome kits for large-scale events.", href: "/collections/events", image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=600" },
+  { name: "Corporates", desc: "Professional gifting and event bags for corporate branding.", href: "/bags-by-industry/corporates", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" },
+  { name: "Retail Stores & Brands", desc: "High-quality shopping bags that elevate the customer retail experience.", href: "/bags-by-industry/retail", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=600" },
+  { name: "Sweet Industry", desc: "Festive and traditional bags perfectly sized for sweet boxes.", href: "/bags-by-industry/sweet-industry", image: "https://images.unsplash.com/photo-1606323497184-754d9c73361a?auto=format&fit=crop&q=80&w=600" },
+  { name: "Cake Industry", desc: "Wide-base bags designed specifically to keep cake boxes flat and secure.", href: "/bags-by-industry/cake-industry", image: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=600" },
+  { name: "Restaurants & Cafes", desc: "Reliable takeaway and delivery bags for the food and beverage sector.", href: "/bags-by-industry/restaurants", image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600" },
+  { name: "Jewellers", desc: "Luxurious, compact, and highly finished bags for precious jewelry items.", href: "/bags-by-industry/jewellers", image: "https://images.unsplash.com/photo-1599643478514-4a4208006eb4?auto=format&fit=crop&q=80&w=600" },
+  { name: "Fashion Designers", desc: "Bespoke, trend-setting packaging that matches high-end fashion identities.", href: "/bags-by-industry/fashion", image: "https://images.unsplash.com/photo-1550614000-4b95dd2458bf?auto=format&fit=crop&q=80&w=600" },
+  { name: "Events", desc: "Bulk, customizable goodie bags and welcome kits for large-scale events.", href: "/bags-by-industry/events", image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&q=80&w=600" },
 ];
 
 export default function BagsByIndustryPage() {

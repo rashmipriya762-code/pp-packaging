@@ -4,15 +4,15 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { ALL_PRODUCTS } from "@/lib/content";
 
 interface RelatedProductsProps {
-  currentCollection?: string;
+  currentCategory?: string;
   currentProductSlug?: string;
 }
 
-export function RelatedProducts({ currentCollection, currentProductSlug }: RelatedProductsProps) {
-  // Show products from the same collection, or a fallback sample from all products
-  let related = currentCollection
+export function RelatedProducts({ currentCategory, currentProductSlug }: RelatedProductsProps) {
+  // Show products from the same category, or a fallback sample from all products
+  let related = currentCategory
     ? ALL_PRODUCTS.filter(
-        (p) => p.collectionSlug === currentCollection && p.slug !== currentProductSlug
+        (p) => p.parentCategory === currentCategory && p.slug !== currentProductSlug
       )
     : [];
 
@@ -46,7 +46,7 @@ export function RelatedProducts({ currentCollection, currentProductSlug }: Relat
           {related.map((product) => (
             <Link
               key={product.slug}
-              href={`/products/${product.slug}`}
+              href={`/${product.parentCategory}/${product.slug}`}
               className="flex flex-col w-[260px] lg:w-auto shrink-0 snap-start bg-white rounded-2xl overflow-hidden shadow-sm border border-teal-900/5 group hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
             >
               <div className="relative aspect-[4/3] w-full bg-cream-soft overflow-hidden">

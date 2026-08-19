@@ -27,25 +27,29 @@ const features = [
 
 export function FeatureStrip() {
   return (
-    <section className="bg-teal-900 py-10 w-full">
+    <section className="bg-cream pb-16">
       <div className="container-custom">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <div key={idx} className="flex flex-col items-start">
-                <div className="w-12 h-12 rounded-full border border-gold-400 flex items-center justify-center mb-4 flex-shrink-0">
-                  <Icon className="text-gold-400" size={24} strokeWidth={1.25} />
+        <div className="bg-teal-900 rounded-card py-12 px-10 w-full shadow-sm relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0 relative z-10">
+            {features.map((feature, idx) => {
+              const Icon = feature.icon;
+              return (
+                <div key={idx} className={`flex flex-row items-start gap-4 px-4 lg:px-8 ${idx !== 0 ? 'lg:border-l border-white/10' : ''}`}>
+                  <div className="flex items-center justify-center flex-shrink-0 mt-1">
+                    <Icon className="text-gold-400" size={28} strokeWidth={1} />
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className="font-body font-semibold text-white text-sm mb-1.5">
+                      {feature.title}
+                    </h3>
+                    <p className="font-body text-xs text-white/70 leading-relaxed pr-2">
+                      {feature.desc}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-body font-bold text-white text-base mb-1.5">
-                  {feature.title}
-                </h3>
-                <p className="font-body text-sm text-white/70 leading-relaxed pr-4">
-                  {feature.desc}
-                </p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
