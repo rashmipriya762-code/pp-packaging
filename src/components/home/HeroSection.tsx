@@ -43,10 +43,10 @@ export function HeroSection() {
             {/* The Image Container */}
             <div className="relative aspect-[4/3] w-full">
               <Image 
-                src="/images/home-hero.png" 
+                src="/images/hero-products.jpg" 
                 alt="Custom kraft and cardboard packaging boxes"
                 fill
-                className="object-contain"
+                className="object-contain mix-blend-darken drop-shadow-sm"
                 priority
               />
               
