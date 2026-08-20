@@ -1,3 +1,4 @@
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
@@ -39,7 +40,7 @@ export function AboutStory() {
           <div className="w-full lg:w-[55%] relative">
             <div className="relative aspect-[4/3] md:aspect-[16/11] w-full rounded-2xl overflow-hidden shadow-card">
               <Image 
-                src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=1200" 
+                src={PRODUCT_IMAGES.customPackaging} 
                 alt="Hands packing a kraft box"
                 fill
                 className="object-cover"

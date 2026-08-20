@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -45,7 +46,7 @@ export function CollectionCTA() {
             {/* Unsplash Image bleeding to the right */}
             <div className="absolute inset-0 top-0 bottom-0 right-0 left-0 md:left-auto md:w-[120%] z-10">
               <Image 
-                src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=1000" 
+                src={PRODUCT_IMAGES.corrugatedBoxes} 
                 alt="Custom Packaging Box"
                 fill
                 className="object-cover md:object-right-bottom"

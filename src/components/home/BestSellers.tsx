@@ -65,21 +65,21 @@ export function BestSellers() {
               <Link 
                 href={product.href}
                 key={idx} 
-                className="flex flex-col w-[280px] lg:w-auto shrink-0 snap-start rounded-card overflow-hidden shadow-card transition-transform hover:-translate-y-1 group"
+                className="flex flex-col w-[280px] lg:w-auto shrink-0 snap-start rounded-card overflow-hidden shadow-card transition-transform hover:-translate-y-1 group bg-white"
               >
                 {/* Image Top (65%) */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <div className={`relative aspect-[4/5] w-full overflow-hidden flex items-center justify-center p-6 ${product.bgClass}`}>
                   <Image
                     src={product.imgUrl}
                     alt={product.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 280px, 20vw"
                   />
                 </div>
                 
                 {/* Text Band Bottom (35%) */}
-                <div className={`p-6 flex-grow flex flex-col justify-center ${product.bgClass}`}>
+                <div className="p-6 flex-grow flex flex-col justify-center bg-white text-teal-900 border-t border-teal-900/5">
                   <h3 className="font-body font-bold text-lg mb-2">{product.title}</h3>
                   <p className="font-body text-sm leading-relaxed opacity-80">{product.desc}</p>
                 </div>

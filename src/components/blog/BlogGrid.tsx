@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +12,7 @@ const articles = [
     readTime: "5 min read",
     title: "Sustainable Packaging: Building a Greener Tomorrow",
     desc: "Discover how eco-friendly packaging solutions can reduce environmental impact and create a better future.",
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "PACKAGING GUIDE",
@@ -19,7 +20,7 @@ const articles = [
     readTime: "6 min read",
     title: "The Ultimate Guide to Custom Packaging",
     desc: "A complete guide to creating custom packaging that reflects your brand and delights your customers.",
-    image: "https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "MATERIALS",
@@ -27,7 +28,7 @@ const articles = [
     readTime: "4 min read",
     title: "Understanding Corrugated Packaging: Strong. Reliable. Versatile.",
     desc: "Learn why corrugated boxes remain a trusted choice for businesses across industries.",
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "INDUSTRY TRENDS",
@@ -35,7 +36,7 @@ const articles = [
     readTime: "5 min read",
     title: "Top Packaging Trends Shaping 2024",
     desc: "Stay ahead with the latest packaging trends driving innovation, sustainability, and customer experience.",
-    image: "https://images.unsplash.com/photo-1620021305602-0e86b2451f28?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "BRANDING",
@@ -43,7 +44,7 @@ const articles = [
     readTime: "4 min read",
     title: "How Great Packaging Elevates Your Brand",
     desc: "The power of packaging in building brand identity, trust, and customer loyalty.",
-    image: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "PACKAGING TIPS",
@@ -51,7 +52,7 @@ const articles = [
     readTime: "3 min read",
     title: "7 Tips for Choosing the Right Packaging for Your Product",
     desc: "Make the right choice for your product with these expert tips on packaging selection.",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "BUSINESS",
@@ -59,7 +60,7 @@ const articles = [
     readTime: "5 min read",
     title: "Bulk Packaging: Benefits for Growing Businesses",
     desc: "Why ordering in bulk can save costs, ensure consistency, and support business growth.",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "PRINTING",
@@ -67,7 +68,7 @@ const articles = [
     readTime: "4 min read",
     title: "Printing & Finishing Options That Make an Impact",
     desc: "Explore different printing and finishing techniques to make your packaging stand out.",
-    image: "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   },
   {
     category: "CASE STUDIES",
@@ -75,7 +76,7 @@ const articles = [
     readTime: "6 min read",
     title: "How We Helped Brands Create Packaging That Sells",
     desc: "Real stories of brands that improved their customer experience with custom packaging.",
-    image: "https://images.unsplash.com/photo-1605814513106-c89b33a5f4ce?auto=format&fit=crop&q=80&w=600"
+    image: PRODUCT_IMAGES.customPackaging
   }
 ];
 

@@ -1,3 +1,4 @@
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import { Clock, MessageSquareText } from "lucide-react";
 
@@ -49,7 +50,7 @@ export function ClientsContactHero() {
             </div>
             <div className="relative w-full h-full min-h-[400px] z-10 p-10 lg:p-12 overflow-hidden">
               <Image 
-                src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+                src={PRODUCT_IMAGES.corrugatedBoxes} 
                 alt="P&P Packaging Boxes" 
                 fill 
                 className="object-contain object-center scale-110 drop-shadow-2xl mix-blend-multiply"

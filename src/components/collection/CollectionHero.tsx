@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -17,7 +18,7 @@ export function CollectionHero({
   title = "Packaging",
   subtitleEmphasis = "For Every Need.",
   description = "Explore our wide range of premium packaging solutions designed to protect, present, and promote your brand.",
-  image = "https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200", // Using the home hero image for consistency
+  image = PRODUCT_IMAGES.customPackaging, // Using the home hero image for consistency
   countText = "Showing 1–12 of 24 Collections"
 }: CollectionHeroProps) {
   return (

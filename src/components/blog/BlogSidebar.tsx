@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -84,10 +85,10 @@ export function BlogSidebar() {
         <h3 className="font-display text-2xl text-teal-900 mb-6">Popular Posts</h3>
         <div className="flex flex-col gap-6 mb-8">
           {[
-            { title: "Sustainable Packaging: Building a Greener Tomorrow", date: "May 10, 2024", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=150" },
-            { title: "The Ultimate Guide to Custom Packaging", date: "Apr 28, 2024", image: "https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=150" },
-            { title: "Top Packaging Trends Shaping 2024", date: "Apr 02, 2024", image: "https://images.unsplash.com/photo-1620021305602-0e86b2451f28?auto=format&fit=crop&q=80&w=150" },
-            { title: "How Great Packaging Elevates Your Brand", date: "Mar 20, 2024", image: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=150" },
+            { title: "Sustainable Packaging: Building a Greener Tomorrow", date: "May 10, 2024", image: PRODUCT_IMAGES.customPackaging },
+            { title: "The Ultimate Guide to Custom Packaging", date: "Apr 28, 2024", image: PRODUCT_IMAGES.customPackaging },
+            { title: "Top Packaging Trends Shaping 2024", date: "Apr 02, 2024", image: PRODUCT_IMAGES.customPackaging },
+            { title: "How Great Packaging Elevates Your Brand", date: "Mar 20, 2024", image: PRODUCT_IMAGES.customPackaging },
           ].map((post, idx) => (
             <Link key={idx} href="#" className="flex items-start gap-4 group">
               <div className="relative w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-white">

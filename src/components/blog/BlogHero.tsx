@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -43,7 +44,7 @@ export function BlogHero() {
             
             <div className="relative aspect-[5/4] w-full max-w-[600px] rounded-2xl overflow-hidden shadow-card z-10 bg-transparent">
               <Image 
-                src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+                src={PRODUCT_IMAGES.customPackaging} 
                 alt="P&P Packaging"
                 fill
                 className="object-contain"

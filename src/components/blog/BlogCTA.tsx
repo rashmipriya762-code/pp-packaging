@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +43,7 @@ export function BlogCTA() {
           {/* COLUMN 2: image (RIGHT side) */}
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto rounded-bl-2xl">
             <Image 
-              src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+              src={PRODUCT_IMAGES.corrugatedBoxes} 
               alt="Packaging Project"
               fill
               className="object-cover object-left-bottom"

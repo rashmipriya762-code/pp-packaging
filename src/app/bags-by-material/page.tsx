@@ -1,3 +1,4 @@
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 import type { Metadata } from "next";
 import { CollectionHero } from "@/components/collection/CollectionHero";
 import { CollectionGrid } from "@/components/collection/CollectionGrid";
@@ -10,14 +11,14 @@ export const metadata: Metadata = {
 };
 
 const materialCollection = [
-  { name: "Paper Bags", desc: "Classic, versatile, and eco-friendly paper bags for retail and food.", href: "/bags-by-material/paper-bags", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600" },
-  { name: "Jute Bags", desc: "Durable and rustic jute bags, perfect for heavy items and sustainable branding.", href: "/bags-by-material/jute-bags", image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=600" },
-  { name: "Cotton Bags", desc: "Premium, reusable cotton bags that offer a soft touch and high-quality print surface.", href: "/bags-by-material/cotton-bags", image: "https://images.unsplash.com/photo-1597464016147-fc7c88b695e9?auto=format&fit=crop&q=80&w=600" },
-  { name: "Canvas Bags", desc: "Heavy-duty canvas bags for maximum durability and long-term reuse.", href: "/bags-by-material/canvas-bags", image: "https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?auto=format&fit=crop&q=80&w=600" },
-  { name: "Non-Woven Bags", desc: "Cost-effective, lightweight, and vibrant non-woven bags for promotions.", href: "/bags-by-material/non-woven-bags", image: "https://images.unsplash.com/photo-1605814513106-c89b33a5f4ce?auto=format&fit=crop&q=80&w=600" },
-  { name: "Organic & Eco-Friendly Bags", desc: "100% certified organic materials for the environmentally conscious brand.", href: "/bags-by-material/eco-friendly-bags", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600" },
-  { name: "Synthetic Bags", desc: "Water-resistant and high-strength synthetic options for specific industrial needs.", href: "/bags-by-material/synthetic-bags", image: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600" },
-  { name: "Tote Bags", desc: "Fashionable and functional everyday tote bags for retail and corporate gifting.", href: "/bags-by-material/tote-bags", image: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=600" },
+  { name: "Paper Bags", desc: "Classic, versatile, and eco-friendly paper bags for retail and food.", href: "/bags-by-material/paper-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Jute Bags", desc: "Durable and rustic jute bags, perfect for heavy items and sustainable branding.", href: "/bags-by-material/jute-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Cotton Bags", desc: "Premium, reusable cotton bags that offer a soft touch and high-quality print surface.", href: "/bags-by-material/cotton-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Canvas Bags", desc: "Heavy-duty canvas bags for maximum durability and long-term reuse.", href: "/bags-by-material/canvas-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Non-Woven Bags", desc: "Cost-effective, lightweight, and vibrant non-woven bags for promotions.", href: "/bags-by-material/non-woven-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Organic & Eco-Friendly Bags", desc: "100% certified organic materials for the environmentally conscious brand.", href: "/bags-by-material/eco-friendly-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Synthetic Bags", desc: "Water-resistant and high-strength synthetic options for specific industrial needs.", href: "/bags-by-material/synthetic-bags", image: PRODUCT_IMAGES.flexiblePackaging },
+  { name: "Tote Bags", desc: "Fashionable and functional everyday tote bags for retail and corporate gifting.", href: "/bags-by-material/tote-bags", image: PRODUCT_IMAGES.flexiblePackaging },
 ];
 
 export default function BagsByMaterialPage() {
@@ -29,7 +30,7 @@ export default function BagsByMaterialPage() {
         subtitleEmphasis="Crafted With Care."
         description="Discover our extensive range of packaging bags categorized by material. From sustainable jute to premium cotton, find the perfect fabric for your brand."
         countText={`Showing 1–${materialCollection.length} of ${materialCollection.length} Collections`}
-        image="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200"
+        image={PRODUCT_IMAGES.flexiblePackaging}
       />
       
       <CollectionGrid items={materialCollection} />

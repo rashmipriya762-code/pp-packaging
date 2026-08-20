@@ -1,3 +1,4 @@
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
@@ -36,7 +37,7 @@ export function ClientsFinalCTA() {
           <div className="w-full md:w-[40%] lg:w-[35%] relative min-h-[250px] md:min-h-full flex items-end justify-end overflow-hidden pt-8 md:pt-0">
             <div className="relative w-[120%] h-[120%] mr-[-10%] mb-[-10%] mix-blend-multiply opacity-90 drop-shadow-xl translate-y-4">
               <Image 
-                src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+                src={PRODUCT_IMAGES.rigidBoxes} 
                 alt="P&P Premium Packaging Solutions" 
                 fill 
                 className="object-contain object-bottom right-0 bottom-0"

@@ -1,4 +1,5 @@
 "use client";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +14,7 @@ export function ClientsCTA() {
           {/* COLUMN 1: image (LEFT side for this CTA) */}
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto rounded-bl-2xl">
             <Image 
-              src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+              src={PRODUCT_IMAGES.protectivePackaging} 
               alt="Packaging Boxes and Materials"
               fill
               className="object-cover"
