@@ -26,7 +26,7 @@ import { Logo } from "@/components/shared/Logo";
 export function Footer() {
   return (
     <footer className="bg-teal-900 text-white w-full">
-      <div className="container-custom pt-20 pb-16 md:pt-24 md:pb-20">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8 pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           
           {/* Column 1: Brand */}
