@@ -56,7 +56,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </head>
-      <body suppressHydrationWarning className="font-body antialiased bg-oyster overflow-x-hidden relative">
+      <body suppressHydrationWarning className="font-body antialiased bg-cream overflow-x-hidden relative">
         <SmoothScrollProvider>
           <Navbar />
           <main className="min-h-screen">{children}</main>

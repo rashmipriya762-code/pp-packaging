@@ -49,10 +49,10 @@ export function BestSellers() {
         {/* Top Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">BEST SELLERS</p>
+            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-gold-600 uppercase">BEST SELLERS</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1]">Our Most Loved<br />Packaging Solutions</h2>
           </div>
-          <Link href="/boxes" className="btn-pill border border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white shrink-0 inline-flex items-center">
+          <Link href="/boxes" className="btn-pill border border-gold-600 text-gold-600 hover:bg-gold-600 hover:text-white shrink-0 inline-flex items-center bg-transparent">
             Shop Collection <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
           </Link>
         </div>
