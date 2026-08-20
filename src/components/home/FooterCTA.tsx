@@ -7,15 +7,15 @@ export function FooterCTA() {
   return (
     <section className="bg-cream pt-8 pb-12 md:pb-16">
       <div className="container-custom">
-        <div className="relative bg-teal-900 rounded-card overflow-hidden flex flex-col md:flex-row items-stretch min-h-[320px] shadow-xl">
+        <div className="relative bg-teal-900 rounded-card overflow-hidden flex flex-col-reverse md:flex-row items-stretch min-h-[320px] shadow-xl">
           
           {/* COLUMN 1: image — its own box, fixed width, own overflow-hidden */}
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto">
             <Image 
-              src="/images/home-cta-packaging.png" 
-              alt="Packaging boxes flat lay"
+              src="/images/home-cta.png" 
+              alt="Packaging products"
               fill
-              className="object-cover object-center"
+              className="object-contain object-center p-4"
             />
           </div>
 

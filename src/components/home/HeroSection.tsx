@@ -43,7 +43,7 @@ export function HeroSection() {
             {/* The Image Card */}
             <div className="relative aspect-[4/3] w-full rounded-card overflow-hidden shadow-card">
               <Image 
-                src="https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=1200" 
+                src="/images/home-hero.png" 
                 alt="Custom kraft and cardboard packaging boxes"
                 fill
                 className="object-cover"
