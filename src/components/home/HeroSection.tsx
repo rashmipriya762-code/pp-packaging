@@ -40,13 +40,13 @@ export function HeroSection() {
 
           {/* Right Column (Image) */}
           <div className="w-full lg:w-[55%] relative">
-            {/* The Image Card */}
-            <div className="relative aspect-[4/3] w-full rounded-card overflow-hidden shadow-card">
+            {/* The Image Container */}
+            <div className="relative aspect-[4/3] w-full">
               <Image 
                 src="/images/home-hero.png" 
                 alt="Custom kraft and cardboard packaging boxes"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
               
