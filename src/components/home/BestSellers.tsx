@@ -3,41 +3,42 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 const products = [
   {
     title: "Corrugated Boxes",
     desc: "Durable & safe packaging for every delivery.",
     bgClass: "bg-teal-900 text-white",
-    imgUrl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: PRODUCT_IMAGES.corrugatedBoxes,
     href: "/boxes",
   },
   {
     title: "Rigid Boxes",
     desc: "Premium packaging for luxury products.",
     bgClass: "bg-cream-soft text-teal-900",
-    imgUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: PRODUCT_IMAGES.rigidBoxes,
     href: "/boxes",
   },
   {
     title: "Flexible Packaging",
     desc: "Lightweight, versatile and cost-effective.",
     bgClass: "bg-teal-800 text-white",
-    imgUrl: "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: PRODUCT_IMAGES.flexiblePackaging,
     href: "/bags-by-material",
   },
   {
     title: "Protective Packaging",
     desc: "Engineered solutions that keep products safe.",
     bgClass: "bg-gold-600 text-white",
-    imgUrl: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: PRODUCT_IMAGES.protectivePackaging,
     href: "/boxes",
   },
   {
     title: "Custom Packaging",
     desc: "Unique designs that make your brand stand out.",
     bgClass: "bg-cream-soft text-teal-900",
-    imgUrl: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: PRODUCT_IMAGES.customPackaging,
     href: "/boxes",
   },
 ];
@@ -52,7 +53,7 @@ export function BestSellers() {
             <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">BEST SELLERS</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1]">Our Most Loved<br />Packaging Solutions</h2>
           </div>
-          <Link href="/boxes" className="btn-pill border border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white shrink-0 inline-flex items-center">
+          <Link href="/boxes" className="btn-pill border border-teal-900 text-teal-900 hover:bg-teal-900/5 transition-colors cursor-pointer shrink-0 inline-flex items-center">
             Shop Collection <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
           </Link>
         </div>
