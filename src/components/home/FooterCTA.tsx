@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 export function FooterCTA() {
   return (
@@ -11,12 +10,12 @@ export function FooterCTA() {
         <div className="relative bg-teal-900 rounded-card overflow-hidden flex flex-col md:flex-row items-stretch min-h-[320px] shadow-xl">
           
           {/* COLUMN 1: image — its own box, fixed width, own overflow-hidden */}
-          <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto p-8">
+          <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto">
             <Image 
-              src={PRODUCT_IMAGES.ctaBanner} 
+              src="/images/home-cta-packaging.png" 
               alt="Packaging boxes flat lay"
               fill
-              className="object-contain p-6 md:p-8"
+              className="object-cover object-center"
             />
           </div>
 

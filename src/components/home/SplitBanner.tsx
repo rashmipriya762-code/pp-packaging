@@ -42,10 +42,10 @@ export function SplitBanner() {
   return (
     <section className="bg-cream pt-6 pb-12 md:pt-10 md:pb-16">
       <div className="container-custom">
-        <div className="flex flex-col lg:flex-row items-stretch gap-0">
+        <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
           
           {/* LEFT CARD — Sustainable */}
-          <div className="relative w-full lg:w-[42%] bg-teal-900 p-10 md:p-12 flex flex-col items-start justify-center rounded-tl-none rounded-tr-3xl rounded-bl-3xl rounded-br-none overflow-hidden shadow-card">
+          <div className="relative w-full lg:w-[42%] bg-teal-900 rounded-card p-10 md:p-12 overflow-hidden flex flex-col items-start justify-center shadow-card">
             
             {/* Background Illustration */}
             <div className="absolute -bottom-10 -right-10 w-64 h-80 text-gold-400 opacity-30 pointer-events-none transform rotate-12">
@@ -76,7 +76,7 @@ export function SplitBanner() {
           </div>
 
           {/* RIGHT CARD — Process */}
-          <div className="w-full lg:w-[58%] bg-cream-soft p-10 md:p-12 flex flex-col justify-center rounded-xl shadow-card">
+          <div className="w-full lg:w-[58%] p-10 md:p-12 flex flex-col justify-center">
             
             <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">OUR PROCESS</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1] mb-12">From Idea to Impact</h2>

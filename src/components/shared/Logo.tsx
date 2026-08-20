@@ -12,7 +12,7 @@ export function Logo({ className = "", isFooter = false }: LogoProps) {
       {/* Logo Mark */}
       <div className="relative w-12 h-12 flex-shrink-0">
         <Image
-          src="/images/p_p_logo.png"
+          src="/images/p_p_logo.jpg"
           alt="P&P Packaging Logo"
           fill
           className="object-contain"

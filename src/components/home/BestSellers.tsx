@@ -3,42 +3,41 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 const products = [
   {
     title: "Corrugated Boxes",
     desc: "Durable & safe packaging for every delivery.",
     bgClass: "bg-teal-900 text-white",
-    imgUrl: PRODUCT_IMAGES.corrugatedBoxes,
+    imgUrl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
   {
     title: "Rigid Boxes",
     desc: "Premium packaging for luxury products.",
     bgClass: "bg-cream-soft text-teal-900",
-    imgUrl: PRODUCT_IMAGES.rigidBoxes,
+    imgUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
   {
     title: "Flexible Packaging",
     desc: "Lightweight, versatile and cost-effective.",
     bgClass: "bg-teal-800 text-white",
-    imgUrl: PRODUCT_IMAGES.flexiblePackaging,
+    imgUrl: "https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/bags-by-material",
   },
   {
     title: "Protective Packaging",
     desc: "Engineered solutions that keep products safe.",
     bgClass: "bg-gold-600 text-white",
-    imgUrl: PRODUCT_IMAGES.protectivePackaging,
+    imgUrl: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
   {
     title: "Custom Packaging",
     desc: "Unique designs that make your brand stand out.",
     bgClass: "bg-cream-soft text-teal-900",
-    imgUrl: PRODUCT_IMAGES.customPackaging,
+    imgUrl: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
 ];
@@ -50,10 +49,10 @@ export function BestSellers() {
         {/* Top Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-gold-600 uppercase">BEST SELLERS</p>
+            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">BEST SELLERS</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1]">Our Most Loved<br />Packaging Solutions</h2>
           </div>
-          <Link href="/boxes" className="btn-pill border border-gold-600 text-gold-600 hover:bg-gold-600/5 transition-colors cursor-pointer shrink-0 inline-flex items-center">
+          <Link href="/boxes" className="btn-pill border border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white shrink-0 inline-flex items-center">
             Shop Collection <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
           </Link>
         </div>
@@ -65,21 +64,21 @@ export function BestSellers() {
               <Link 
                 href={product.href}
                 key={idx} 
-                className="flex flex-col w-[280px] lg:w-auto shrink-0 snap-start rounded-card overflow-hidden shadow-card transition-transform hover:-translate-y-1 group bg-white"
+                className="flex flex-col w-[280px] lg:w-auto shrink-0 snap-start rounded-card overflow-hidden shadow-card transition-transform hover:-translate-y-1 group"
               >
                 {/* Image Top (65%) */}
-                <div className={`relative aspect-[4/5] w-full overflow-hidden flex items-center justify-center p-6 ${product.bgClass}`}>
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <Image
                     src={product.imgUrl}
                     alt={product.title}
                     fill
-                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 1024px) 280px, 20vw"
                   />
                 </div>
                 
                 {/* Text Band Bottom (35%) */}
-                <div className="p-6 flex-grow flex flex-col justify-center bg-white text-teal-900 border-t border-teal-900/5">
+                <div className={`p-6 flex-grow flex flex-col justify-center ${product.bgClass}`}>
                   <h3 className="font-body font-bold text-lg mb-2">{product.title}</h3>
                   <p className="font-body text-sm leading-relaxed opacity-80">{product.desc}</p>
                 </div>
