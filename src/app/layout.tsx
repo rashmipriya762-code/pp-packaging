@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -56,7 +56,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </head>
-      <body className="font-body antialiased bg-oyster">
+      <body suppressHydrationWarning className="font-body antialiased bg-oyster overflow-x-hidden relative">
         <SmoothScrollProvider>
           <Navbar />
           <main className="min-h-screen">{children}</main>
