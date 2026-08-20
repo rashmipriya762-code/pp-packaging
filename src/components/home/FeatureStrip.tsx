@@ -27,7 +27,7 @@ const features = [
 
 export function FeatureStrip() {
   return (
-    <section className="bg-cream pb-12 md:pb-16">
+    <section className="bg-cream pb-3 md:pb-4">
       <div className="container-custom">
         <div className="bg-teal-900 rounded-card py-12 px-10 w-full shadow-sm relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0 relative z-10">

@@ -14,7 +14,7 @@ const industries = [
 
 export function IndustriesRow() {
   return (
-    <section className="bg-cream pt-8 pb-6 md:pt-10 md:pb-8">
+    <section className="bg-cream pt-6 pb-4 md:pt-8 md:pb-6">
       <div className="container-custom">
         <div className="flex flex-col items-center">
           <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase text-center">INDUSTRIES WE SERVE</p>

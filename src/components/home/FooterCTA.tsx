@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export function FooterCTA() {
   return (
-    <section className="bg-cream pt-8 pb-12 md:pb-16">
+    <section className="bg-cream pt-3 pb-8 md:pb-12">
       <div className="container-custom">
         <div className="relative bg-teal-900 rounded-card overflow-hidden flex flex-col-reverse md:flex-row items-stretch min-h-[320px] shadow-xl">
           

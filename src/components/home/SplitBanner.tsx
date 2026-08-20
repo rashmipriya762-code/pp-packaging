@@ -40,7 +40,7 @@ const steps = [
 
 export function SplitBanner() {
   return (
-    <section className="bg-cream pt-6 pb-12 md:pt-10 md:pb-16">
+    <section className="bg-cream pt-3 pb-3 md:pt-4 md:pb-4">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-stretch">
           

@@ -44,7 +44,7 @@ const products = [
 
 export function BestSellers() {
   return (
-    <section className="bg-[#FAF7F2] pt-8 pb-12 md:pt-12 md:pb-16 px-4 lg:px-8">
+    <section className="bg-[#FAF7F2] pt-3 pb-3 md:pt-4 md:pb-4 px-4 lg:px-8">
       <div className="max-w-[1440px] mx-auto">
         {/* OUTER BEST SELLERS CARD */}
         <div className="bg-[#F4ECE0] rounded-[2rem] md:rounded-[3rem] px-6 py-10 md:px-12 md:py-16 lg:px-16 lg:py-20 w-full overflow-hidden">
