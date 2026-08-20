@@ -40,7 +40,7 @@ const steps = [
 
 export function SplitBanner() {
   return (
-    <section className="bg-cream pt-8 pb-16 md:pt-12 md:pb-24">
+    <section className="bg-cream pt-6 pb-12 md:pt-10 md:pb-16">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
           
@@ -76,10 +76,10 @@ export function SplitBanner() {
           </div>
 
           {/* RIGHT CARD — Process */}
-          <div className="w-full lg:w-[58%] bg-cream-soft rounded-card p-10 md:p-12 shadow-card flex flex-col justify-center">
+          <div className="w-full lg:w-[58%] p-10 md:p-12 flex flex-col justify-center">
             
-            <p className="eyebrow mb-3">OUR PROCESS</p>
-            <h2 className="section-heading mb-12">From Idea to Impact</h2>
+            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">OUR PROCESS</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1] mb-12">From Idea to Impact</h2>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 sm:gap-2 relative">
               

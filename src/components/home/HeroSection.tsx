@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="bg-cream pt-[120px] pb-16 md:pt-[160px] md:pb-20">
+    <section className="bg-cream pt-[120px] pb-12 md:pt-[140px] md:pb-16">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           

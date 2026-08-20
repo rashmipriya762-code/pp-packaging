@@ -16,7 +16,7 @@ const products = [
     title: "Rigid Boxes",
     desc: "Premium packaging for luxury products.",
     bgClass: "bg-cream-soft text-teal-900",
-    imgUrl: "https://images.unsplash.com/photo-1607344645866-eea01fb9cc2e?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
   {
@@ -30,7 +30,7 @@ const products = [
     title: "Protective Packaging",
     desc: "Engineered solutions that keep products safe.",
     bgClass: "bg-gold-600 text-white",
-    imgUrl: "https://images.unsplash.com/photo-1605814513106-c89b33a5f4ce?auto=format&fit=crop&q=80&w=600&h=800",
+    imgUrl: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&q=80&w=600&h=800",
     href: "/boxes",
   },
   {
@@ -44,15 +44,15 @@ const products = [
 
 export function BestSellers() {
   return (
-    <section className="bg-cream pt-16 pb-16 md:pt-24 md:pb-20">
+    <section className="bg-cream pt-12 pb-12 md:pt-16 md:pb-16">
       <div className="container-custom">
         {/* Top Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="eyebrow mb-3">BEST SELLERS</p>
-            <h2 className="section-heading">Our Most Loved<br />Packaging Solutions</h2>
+            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">BEST SELLERS</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1]">Our Most Loved<br />Packaging Solutions</h2>
           </div>
-          <Link href="/boxes" className="btn-pill btn-outline-teal shrink-0 inline-flex items-center">
+          <Link href="/boxes" className="btn-pill border border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white shrink-0 inline-flex items-center">
             Shop Collection <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
           </Link>
         </div>

@@ -43,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 400; /* Regular weight upright serif default */
   line-height: 1.15;
-  color: #1C2B33;
 }
 
 * { box-sizing: border-box; }

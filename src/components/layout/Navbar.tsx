@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import { EnquiryModal } from "@/components/ui/EnquiryModal";
+import { Logo } from "@/components/shared/Logo";
 
 type NavLink = {
   label: string;
@@ -96,16 +97,7 @@ export function Navbar() {
         <div className="container-custom w-full h-full">
           <div className="flex items-center justify-between h-full">
             {/* Left: Logo */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
-              <div className="w-10 h-10 bg-teal-900 text-white flex items-center justify-center font-display font-bold text-xl rounded-md flex-shrink-0">
-                P&P
-              </div>
-              <div className="hidden lg:block">
-                <p className="font-display text-base font-bold text-teal-900 leading-none tracking-widest uppercase">
-                  P&P Packaging
-                </p>
-              </div>
-            </Link>
+            <Logo />
 
             {/* Center/Right: Desktop Nav */}
             <nav className="hidden xl:flex items-center gap-6 ml-auto mr-8 h-full">

@@ -13,11 +13,11 @@ const industries = [
 
 export function IndustriesRow() {
   return (
-    <section className="bg-cream pt-16 pb-8 md:pt-24 md:pb-12">
+    <section className="bg-cream pt-12 pb-8 md:pt-16 md:pb-10">
       <div className="container-custom">
         <div className="flex flex-col items-center">
-          <p className="eyebrow mb-3 text-center">INDUSTRIES WE SERVE</p>
-          <h2 className="section-heading text-center mb-16">Trusted by Diverse Industries</h2>
+          <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase text-center">INDUSTRIES WE SERVE</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1] text-center mb-16">Trusted by Diverse Industries</h2>
           
           <div className="flex flex-wrap justify-center items-end gap-10 md:gap-16 lg:gap-24 w-full">
             {industries.map((industry, idx) => {

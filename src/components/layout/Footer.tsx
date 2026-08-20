@@ -21,25 +21,17 @@ const LinkedInIcon = () => (
     <circle cx="4" cy="4" r="2"/>
   </svg>
 );
+import { Logo } from "@/components/shared/Logo";
 
 export function Footer() {
   return (
     <footer className="bg-teal-900 text-white w-full">
-      <div className="container-custom py-16 md:py-20">
+      <div className="container-custom pt-20 pb-16 md:pt-24 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           
           {/* Column 1: Brand */}
           <div className="lg:col-span-1 flex flex-col">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-white text-teal-900 flex items-center justify-center font-display font-bold text-xl rounded-md flex-shrink-0">
-                P&P
-              </div>
-              <div>
-                <p className="font-display text-base font-bold text-white leading-none tracking-widest uppercase">
-                  P&P Packaging
-                </p>
-              </div>
-            </Link>
+            <Logo isFooter className="mb-6" />
             <p className="font-body text-white/80 text-sm leading-relaxed mb-6 pr-4">
               Thoughtful packaging today for a better tomorrow.
             </p>
