@@ -41,7 +41,7 @@ const steps = [
 export function SplitBanner() {
   return (
     <section className="bg-cream pt-3 pb-3 md:pt-4 md:pb-4 px-4 md:px-6 lg:px-8">
-      <div className="max-w-[1440px] mx-auto">
+      <div className="w-full">
         <div className="flex flex-col lg:flex-row items-stretch">
           
           {/* LEFT CARD — Sustainable */}
