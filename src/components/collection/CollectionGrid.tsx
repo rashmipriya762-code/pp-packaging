@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CollectionFilterSidebar } from "./CollectionFilterSidebar";
+import { ProductCard } from "@/components/shared/ProductCard";
 
 export interface CollectionItem {
   name: string;
@@ -40,40 +41,15 @@ export function CollectionGrid({ items }: { items: CollectionItem[] }) {
                 const imgBg = bgColors[idx % bgColors.length];
                 
                 return (
-                  <Link href={item.href} key={idx} className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group border border-teal-900/5">
-                    {/* Top Zone - 65% (Image Area) */}
-                    <div className={`relative aspect-[4/3] w-full overflow-hidden p-8 flex items-center justify-center ${imgBg}`}>
-                       <div className="relative w-full h-full">
-                        <Image 
-                          src={item.image} 
-                          alt={item.name} 
-                          fill 
-                          className="object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl" 
-                        />
-                       </div>
-                    </div>
-
-                    {/* Bottom Zone - 35% (Content Area) */}
-                    <div className="px-6 pb-6 pt-5 flex flex-col flex-1 bg-white">
-                      <h3 className="font-display text-xl leading-tight mb-2 text-teal-900 group-hover:text-gold-600 transition-colors">
-                        {item.name}
-                      </h3>
-                      <p className="font-body text-xs mb-6 flex-1 text-teal-900/60 leading-relaxed line-clamp-2">
-                        {item.desc}
-                      </p>
-                      
-                      <div className="flex items-center justify-between border-t border-teal-900/10 pt-4 mt-auto">
-                        <span className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-teal-900 group-hover:text-gold-600 transition-colors">
-                          Explore Collection
-                        </span>
-                        
-                        {/* Circular Arrow Button */}
-                        <div className="w-7 h-7 rounded-full flex items-center justify-center border border-teal-900/20 group-hover:bg-teal-900 transition-colors">
-                          <ArrowRight size={12} strokeWidth={2} className="text-teal-900 group-hover:text-white" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                  <ProductCard
+                    key={idx}
+                    href={item.href}
+                    image={item.image}
+                    title={item.name}
+                    description={item.desc}
+                    bgClass={`${imgBg} text-teal-900 border border-teal-900/5`}
+                    ctaText="Explore Collection"
+                  />
                 );
               })}
             </div>

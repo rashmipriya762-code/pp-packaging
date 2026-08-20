@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { ALL_PRODUCTS } from "@/lib/content";
+import { ProductCard } from "@/components/shared/ProductCard";
 
 interface RelatedProductsProps {
   currentCategory?: string;
@@ -44,37 +45,15 @@ export function RelatedProducts({ currentCategory, currentProductSlug }: Related
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-6 snap-x snap-mandatory no-scrollbar pb-6 lg:pb-0">
           {related.map((product) => (
-            <Link
+            <ProductCard
               key={product.slug}
               href={`/${product.parentCategory}/${product.slug}`}
-              className="flex flex-col w-[260px] lg:w-auto shrink-0 snap-start bg-white rounded-2xl overflow-hidden shadow-sm border border-teal-900/5 group hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="relative aspect-[4/3] w-full bg-cream-soft overflow-hidden">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-body font-bold text-sm text-teal-900 mb-1 group-hover:text-gold-600 transition-colors">
-                  {product.name}
-                </h3>
-                <p className="font-body text-xs text-teal-900/60 mb-4 line-clamp-2 leading-relaxed">
-                  {product.tagline}
-                </p>
-                
-                <div className="mt-auto flex items-center justify-between border-t border-teal-900/5 pt-4">
-                  <span className="font-body font-bold text-sm text-teal-900">
-                    From {product.priceInfo.amount}
-                  </span>
-                  <div className="w-6 h-6 rounded-full border border-teal-900/20 flex items-center justify-center text-teal-900 group-hover:bg-teal-900 group-hover:text-white transition-colors">
-                    <ArrowRight size={12} />
-                  </div>
-                </div>
-              </div>
-            </Link>
+              image={product.image}
+              title={product.name}
+              description={product.tagline}
+              bgClass="bg-white text-teal-900 border border-teal-900/5"
+              price={product.priceInfo.amount}
+            />
           ))}
         </div>
       </div>

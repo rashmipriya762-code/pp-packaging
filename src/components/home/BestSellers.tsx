@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ProductCard } from "@/components/shared/ProductCard";
 
 const products = [
   {
@@ -61,28 +62,15 @@ export function BestSellers() {
         <div className="relative">
           <div className="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-6 snap-x snap-mandatory no-scrollbar pb-6 lg:pb-0">
             {products.map((product, idx) => (
-              <Link 
+              <ProductCard
+                key={idx}
                 href={product.href}
-                key={idx} 
-                className="flex flex-col w-[280px] lg:w-auto shrink-0 snap-start rounded-card overflow-hidden shadow-card transition-transform hover:-translate-y-1 group"
-              >
-                {/* Image Top (65%) */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <Image
-                    src={product.imgUrl}
-                    alt={product.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 1024px) 280px, 20vw"
-                  />
-                </div>
-                
-                {/* Text Band Bottom (35%) */}
-                <div className={`p-6 flex-grow flex flex-col justify-center ${product.bgClass}`}>
-                  <h3 className="font-body font-bold text-lg mb-2">{product.title}</h3>
-                  <p className="font-body text-sm leading-relaxed opacity-80">{product.desc}</p>
-                </div>
-              </Link>
+                image={product.imgUrl}
+                title={product.title}
+                description={product.desc}
+                bgClass={product.bgClass}
+                ctaText="Shop Collection"
+              />
             ))}
           </div>
 

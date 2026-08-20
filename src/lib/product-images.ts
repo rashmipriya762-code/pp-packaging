@@ -1,8 +1,8 @@
 export const PRODUCT_IMAGES = {
-  corrugatedBoxes: "/images/products/corrugated-box-open.jpg",
-  rigidBoxes: "/images/products/rigid-box-navy.jpg",
-  flexiblePackaging: "/images/products/flexible-pouches-collection.jpg",
-  protectivePackaging: "/images/products/packaging-materials-flatlay.jpg",
-  customPackaging: "/images/products/gift-boxes-collection.jpg",
+  corrugatedBoxes: "/images/products/corrugated.png",
+  rigidBoxes: "/images/products/rigid.png",
+  flexiblePackaging: "/images/products/flexible.png",
+  protectivePackaging: "/images/products/protective.png",
+  customPackaging: "/images/products/custom.png",
   ctaBanner: "/images/products/corrugated-box-open.jpg",
 };
