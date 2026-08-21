@@ -1,6 +1,6 @@
 import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { EnquireNowButton } from "@/components/shared/EnquireNowButton";
 
 export function ClientsFinalCTA() {
   return (
@@ -27,9 +27,10 @@ export function ClientsFinalCTA() {
               Get a custom quote today and take the first step toward packaging that represents your brand perfectly.
             </p>
             <div className="w-full flex justify-center lg:justify-start">
-              <button className="btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 font-bold border-none">
-                Get a Custom Quote <ArrowRight size={18} strokeWidth={2} className="ml-2" />
-              </button>
+              <EnquireNowButton
+                label="Get a Custom Quote"
+                className="btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 font-bold border-none"
+              />
             </div>
           </div>
 
@@ -38,8 +39,9 @@ export function ClientsFinalCTA() {
             <div className="relative w-[120%] h-[120%] mr-[-10%] mb-[-10%] mix-blend-multiply opacity-90 drop-shadow-xl translate-y-4">
               <Image 
                 src={PRODUCT_IMAGES.rigidBoxes} 
-                alt="P&P Premium Packaging Solutions" 
-                fill 
+                alt=""
+                fill
+                sizes="(max-width: 768px) 100vw, 35vw"
                 className="object-contain object-bottom right-0 bottom-0"
               />
             </div>

@@ -1,13 +1,12 @@
-"use client";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
-
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
+import { EnquireNowButton } from "@/components/shared/EnquireNowButton";
 
 export function ClientsHero() {
   return (
-    <section className="bg-cream pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden relative">
+    <section className="bg-cream pt-9 pb-16 md:pt-[68px] md:pb-20 overflow-hidden relative">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
@@ -28,12 +27,13 @@ export function ClientsHero() {
             </h1>
             
             <p className="font-body text-teal-900/70 text-base md:text-lg leading-relaxed mb-10 max-w-[440px]">
-              We're honored to partner with amazing brands across industries. Together, we create packaging that protects, promotes, and makes an impact.
+              We&apos;re honored to partner with amazing brands across industries. Together, we create packaging that protects, promotes, and makes an impact.
             </p>
             
-            <button className="btn-pill bg-teal-900 text-white hover:bg-teal-800 shadow-md">
-              Partner With Us <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-            </button>
+            <EnquireNowButton
+              label="Partner With Us"
+              className="btn-pill btn-teal shadow-md"
+            />
           </div>
 
           {/* RIGHT: Image */}
@@ -44,8 +44,9 @@ export function ClientsHero() {
             <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-card z-10 bg-white">
               <Image 
                 src={PRODUCT_IMAGES.rigidBoxes} 
-                alt="P&P Packaging Boxes and Tape"
+                alt="Rigid packaging boxes"
                 fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover"
                 priority
               />

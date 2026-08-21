@@ -1,8 +1,6 @@
-"use client";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
-
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
+import { EnquireNowButton } from "@/components/shared/EnquireNowButton";
 
 export function CollectionCTA() {
   return (
@@ -13,16 +11,17 @@ export function CollectionCTA() {
           {/* LEFT ZONE: Text */}
           <div className="w-full md:w-[55%] p-10 md:p-16 lg:py-20 lg:pr-20 flex flex-col justify-center items-start z-10">
             <h2 className="font-display text-4xl md:text-5xl text-teal-900 leading-tight mb-6">
-              Can't Find<br className="hidden sm:block" /> What You Need?
+              Can&apos;t Find<br className="hidden sm:block" /> What You Need?
             </h2>
             
             <p className="font-body text-teal-900/70 text-base md:text-lg leading-relaxed mb-10 max-w-md">
               We create custom packaging solutions tailored to your product, brand and industry.
             </p>
             
-            <button className="btn-pill bg-teal-900 text-white hover:bg-teal-800 shadow-sm mt-2">
-              Get a Custom Quote <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-            </button>
+            <EnquireNowButton
+              label="Get a Custom Quote"
+              className="btn-pill btn-teal shadow-sm mt-2"
+            />
           </div>
 
           {/* RIGHT ZONE: Image (flush left and bottom inside its column) */}
@@ -47,8 +46,9 @@ export function CollectionCTA() {
             <div className="absolute inset-0 top-0 bottom-0 right-0 left-0 md:left-auto md:w-[120%] z-10">
               <Image 
                 src={PRODUCT_IMAGES.corrugatedBoxes} 
-                alt="Custom Packaging Box"
+                alt=""
                 fill
+                sizes="(max-width: 768px) 100vw, 54vw"
                 className="object-cover md:object-right-bottom"
               />
             </div>

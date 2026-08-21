@@ -1,27 +1,40 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug } from "@/lib/content";
+import { getProductBySlug, type CategorySlug } from "@/lib/content";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductDetails } from "@/components/product/ProductDetails";
 import { RelatedProducts } from "@/components/product/RelatedProducts";
 import { FeatureStrip } from "@/components/home/FeatureStrip";
 import { FooterCTA } from "@/components/home/FooterCTA";
+import { JsonLd } from "@/components/shared/JsonLd";
+import { breadcrumbJsonLd, productJsonLd } from "@/lib/seo";
 
-export async function ProductPageTemplate({ slug }: { slug: string }) {
-  const product = getProductBySlug(slug);
+export function ProductPageTemplate({
+  slug,
+  category,
+}: {
+  slug: string;
+  category: CategorySlug;
+}) {
+  // Scoped to the category, so /boxes/paper-bags 404s instead of rendering a
+  // bag under a Boxes breadcrumb.
+  const product = getProductBySlug(slug, category);
   if (!product) notFound();
 
-  // Build dynamic breadcrumb
   const breadcrumb = [
     { label: "Home", href: "/" },
     { label: product.parentLabel, href: `/${product.parentCategory}` },
     { label: product.name },
   ];
 
-  // Use same image for all gallery positions
+  // The gallery repeats the single product photo. Replace `product.image` with
+  // a real per-product image set to make these distinct.
   const images = [product.image, product.image, product.image, product.image, product.image];
 
   return (
-    <main className="bg-cream min-h-screen">
+    <div className="bg-cream min-h-screen">
+      <JsonLd data={productJsonLd(product)} />
+      <JsonLd data={breadcrumbJsonLd(breadcrumb)} />
+
       <ProductHero
         breadcrumb={breadcrumb}
         images={images}
@@ -37,15 +50,19 @@ export async function ProductPageTemplate({ slug }: { slug: string }) {
       <FeatureStrip />
 
       <ProductDetails
+        productName={product.name}
         description={product.description}
         features={product.features}
         specs={product.specs}
         imageUrl={product.image}
       />
 
-      <RelatedProducts currentCategory={product.parentCategory} currentProductSlug={product.slug} />
+      <RelatedProducts
+        currentCategory={product.parentCategory}
+        currentProductSlug={product.slug}
+      />
 
       <FooterCTA />
-    </main>
+    </div>
   );
 }

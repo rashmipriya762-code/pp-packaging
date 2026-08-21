@@ -1,5 +1,3 @@
-"use client";
-
 import { MessageSquare, PenTool, Package, Truck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -78,7 +76,7 @@ export function SplitBanner() {
           {/* RIGHT CARD — Process */}
           <div className="w-full lg:w-[58%] p-10 md:p-12 flex flex-col justify-center">
             
-            <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase">OUR PROCESS</p>
+            <p className="eyebrow mb-3 text-teal-900/60">Our Process</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1] mb-12">From Idea to Impact</h2>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 sm:gap-2 relative">

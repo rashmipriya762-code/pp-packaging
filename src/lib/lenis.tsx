@@ -1,16 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
     // Respect prefers-reduced-motion
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReduced) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -18,16 +14,17 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
       smoothWheel: true,
     });
 
-    lenisRef.current = lenis;
-
-    function raf(time: number) {
+    // The frame id has to be tracked: previously the recursive raf() kept
+    // rescheduling itself after destroy(), driving a dead Lenis instance.
+    let frame = 0;
+    const raf = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+      frame = requestAnimationFrame(raf);
+    };
+    frame = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(frame);
       lenis.destroy();
     };
   }, []);

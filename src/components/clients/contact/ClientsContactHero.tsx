@@ -14,12 +14,12 @@ export function ClientsContactHero() {
               CONTACT US
             </span>
             <h1 className="font-display font-medium text-white text-5xl lg:text-[4.5rem] leading-[1.05] mb-6">
-              <span className="block">Let's Build</span>
+              <span className="block">Let&apos;s Build</span>
               <span className="block text-gold-600">Something Great</span>
               <span className="block">Together.</span>
             </h1>
             <p className="font-body text-white/80 text-lg max-w-md mb-12 leading-relaxed">
-              Have a question, need a quote, or want to discuss your packaging needs? We're here to help.
+              Have a question, need a quote, or want to discuss your packaging needs? We&apos;re here to help.
             </p>
 
             {/* Info Items */}
@@ -51,8 +51,9 @@ export function ClientsContactHero() {
             <div className="relative w-full h-full min-h-[400px] z-10 p-10 lg:p-12 overflow-hidden">
               <Image 
                 src={PRODUCT_IMAGES.corrugatedBoxes} 
-                alt="P&P Packaging Boxes" 
-                fill 
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-contain object-center scale-110 drop-shadow-2xl mix-blend-multiply"
                 priority
               />

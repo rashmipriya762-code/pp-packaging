@@ -1,22 +1,41 @@
 import type { Metadata } from "next";
-import { getProductBySlug, boxes } from "@/lib/content";
+import { getCategory, getProductBySlug } from "@/lib/content";
 import { ProductPageTemplate } from "@/components/product/ProductPageTemplate";
 
+const CATEGORY = "boxes" as const;
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return boxes.map((p) => ({ slug: p.slug }));
+  return (getCategory(CATEGORY)?.items ?? []).map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = getProductBySlug(slug, CATEGORY);
   if (!product) return {};
   return {
-    title: `${product.name} — Boxes | P&P Packaging`,
+    // The root layout template appends the brand name — do not repeat it here.
+    title: `${product.name} — Boxes`,
     description: product.description.slice(0, 155),
+    alternates: { canonical: `/${CATEGORY}/${product.slug}` },
+    openGraph: {
+      title: product.name,
+      description: product.description.slice(0, 155),
+      images: [{ url: product.image }],
+    },
   };
 }
 
-export default async function BoxesProductPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BoxesProductPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  return <ProductPageTemplate slug={slug} />;
+  return <ProductPageTemplate slug={slug} category={CATEGORY} />;
 }

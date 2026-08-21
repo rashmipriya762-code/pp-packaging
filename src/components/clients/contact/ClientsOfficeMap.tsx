@@ -1,4 +1,5 @@
 import { MapPin, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/lib/content";
 
 export function ClientsOfficeMap() {
   return (
@@ -29,11 +30,19 @@ export function ClientsOfficeMap() {
           <div className="w-full lg:w-[40%] bg-teal-900 p-10 lg:p-16 flex flex-col justify-center">
             <h3 className="font-display text-white text-3xl mb-6">Visit Our Office</h3>
             <p className="font-body text-white/80 text-base leading-relaxed mb-10">
-              We'd love to meet you in person and discuss how we can help your brand grow with premium packaging solutions.
+              We&apos;d love to meet you in person and discuss how we can help your brand grow with premium packaging solutions.
             </p>
-            <button className="btn-pill btn-white self-start">
-              Get Directions <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
-            </button>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                siteConfig.address
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pill btn-white self-start"
+            >
+              Get Directions
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+            </a>
           </div>
 
         </div>

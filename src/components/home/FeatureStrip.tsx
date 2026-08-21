@@ -1,5 +1,3 @@
-"use client";
-
 import { Leaf, Package, ShieldCheck, Clock } from "lucide-react";
 
 const features = [

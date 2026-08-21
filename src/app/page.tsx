@@ -7,7 +7,7 @@ import { FooterCTA } from "@/components/home/FooterCTA";
 
 export default function Home() {
   return (
-    <main className="bg-cream min-h-screen">
+    <div className="bg-cream min-h-screen">
       <HeroSection />
       <FeatureStrip />
       
@@ -18,6 +18,6 @@ export default function Home() {
         <IndustriesRow />
         <FooterCTA />
       </div>
-    </main>
+    </div>
   );
 }

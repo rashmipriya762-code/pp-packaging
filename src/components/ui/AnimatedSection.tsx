@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -20,21 +20,21 @@ export function AnimatedSection({
   direction = "up",
   once = true,
 }: AnimatedSectionProps) {
+  const reduceMotion = useReducedMotion();
+
   const variants: Variants = {
     hidden: {
-      opacity: 0,
-      y: direction === "up" ? 40 : 0,
+      opacity: reduceMotion ? 1 : 0,
+      y: !reduceMotion && direction === "up" ? 40 : 0,
       x: 0, // Disabled horizontal shifts to prevent layout overflow scrollbars
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
-      transition: {
-        duration: 0.7,
-        delay,
-        ease: EASE_SMOOTH,
-      },
+      transition: reduceMotion
+        ? { duration: 0 }
+        : { duration: 0.7, delay, ease: EASE_SMOOTH },
     },
   };
 

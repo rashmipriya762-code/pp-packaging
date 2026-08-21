@@ -1,5 +1,6 @@
 import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const milestones = [
@@ -11,7 +12,7 @@ const milestones = [
 
 export function AboutStory() {
   return (
-    <section className="bg-cream pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
+    <section id="our-story" className="bg-cream pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
@@ -31,9 +32,10 @@ export function AboutStory() {
               From a small beginning to becoming a trusted partner for businesses across industries, our journey has been driven by innovation, quality, and a commitment to sustainable growth.
             </p>
             
-            <button className="btn-pill bg-teal-900 text-white hover:bg-teal-800 shadow-md">
-              Read Our Journey <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-            </button>
+            <Link href="/blogs" className="btn-pill btn-teal shadow-md">
+              Read Our Journey
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
           </div>
 
           {/* RIGHT: Image with Timeline Overlay */}
@@ -43,6 +45,7 @@ export function AboutStory() {
                 src={PRODUCT_IMAGES.customPackaging} 
                 alt="Hands packing a kraft box"
                 fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover"
               />
               

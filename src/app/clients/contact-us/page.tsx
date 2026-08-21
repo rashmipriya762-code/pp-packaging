@@ -7,19 +7,19 @@ import { ClientsFAQ } from "@/components/clients/contact/ClientsFAQ";
 import { ClientsFinalCTA } from "@/components/clients/contact/ClientsFinalCTA";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Our Clients | P&P Packaging",
+  title: "Contact Us",
   description: "Get in touch with P&P Packaging for custom packaging solutions, quotes, and expert advice.",
 };
 
 export default function ClientsContactPage() {
   return (
-    <main className="bg-cream min-h-screen pt-[76px]">
+    <div className="bg-cream min-h-screen">
       <ClientsContactHero />
       <ClientsContactForm />
       <ClientsOfficeMap />
       <ClientsTrustStrip />
       <ClientsFAQ />
       <ClientsFinalCTA />
-    </main>
+    </div>
   );
 }

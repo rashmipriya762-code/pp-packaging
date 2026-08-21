@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const clientLogos = [
@@ -21,9 +20,10 @@ export function TrustedClients() {
               Our Valued Clients
             </h2>
           </div>
-          <button className="btn-pill btn-outline-teal shrink-0">
-            View All Clients <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-          </button>
+          <Link href="/clients" className="btn-pill btn-outline-teal shrink-0">
+            View All Clients
+            <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+          </Link>
         </div>
 
         {/* Logo Grid */}

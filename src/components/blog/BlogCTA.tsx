@@ -4,6 +4,7 @@ import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CONTACT_HREF } from "@/lib/navigation";
 
 export function BlogCTA() {
   return (
@@ -31,10 +32,10 @@ export function BlogCTA() {
               </h2>
               
               <p className="font-body text-white/70 text-base md:text-lg max-w-md mb-8">
-                Let's create packaging that protects your products and elevates your brand.
+                Let&apos;s create packaging that protects your products and elevates your brand.
               </p>
               
-              <Link href="/contact" className="self-start btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 shadow-sm inline-flex items-center">
+              <Link href={CONTACT_HREF} className="self-start btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 shadow-sm inline-flex items-center">
                 Get a Quote <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
               </Link>
             </div>
@@ -44,8 +45,9 @@ export function BlogCTA() {
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto rounded-bl-2xl">
             <Image 
               src={PRODUCT_IMAGES.corrugatedBoxes} 
-              alt="Packaging Project"
+              alt=""
               fill
+              sizes="(max-width: 768px) 100vw, 42vw"
               className="object-cover object-left-bottom"
             />
           </div>

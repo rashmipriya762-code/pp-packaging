@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { EnquireNowButton } from "@/components/shared/EnquireNowButton";
 
 export function FooterCTA() {
   return (
@@ -15,6 +13,7 @@ export function FooterCTA() {
               src="/images/home-cta-packaging.png" 
               alt="Packaging boxes flat lay"
               fill
+              sizes="(max-width: 768px) 100vw, 42vw"
               className="object-cover object-center"
             />
           </div>
@@ -26,12 +25,13 @@ export function FooterCTA() {
             </h2>
             
             <p className="font-body text-white/70 text-lg max-w-md">
-              Let's create packaging that protects your products and promotes your brand.
+              Let&apos;s create packaging that protects your products and promotes your brand.
             </p>
             
-            <button className="self-start btn-pill bg-white text-teal-900 hover:bg-cream-soft shadow-sm mt-2">
-              Get a Quote <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-            </button>
+            <EnquireNowButton
+              label="Get a Quote"
+              className="self-start btn-pill btn-white shadow-sm mt-2"
+            />
           </div>
 
         </div>

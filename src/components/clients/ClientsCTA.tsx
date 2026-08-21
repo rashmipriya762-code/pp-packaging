@@ -4,6 +4,7 @@ import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CONTACT_HREF } from "@/lib/navigation";
 
 export function ClientsCTA() {
   return (
@@ -15,8 +16,9 @@ export function ClientsCTA() {
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto rounded-bl-2xl">
             <Image 
               src={PRODUCT_IMAGES.protectivePackaging} 
-              alt="Packaging Boxes and Materials"
+              alt=""
               fill
+              sizes="(max-width: 768px) 100vw, 42vw"
               className="object-cover"
             />
           </div>
@@ -24,7 +26,7 @@ export function ClientsCTA() {
           {/* COLUMN 2: text (RIGHT side for this CTA) */}
           <div className="w-full md:w-[58%] flex flex-col justify-center px-10 py-12 md:px-16 lg:px-20 gap-6">
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              <span className="text-white block">Let's Build Something</span>
+              <span className="text-white block">Let&apos;s Build Something</span>
               <span className="text-gold-600 block">Great Together.</span>
             </h2>
             
@@ -32,7 +34,7 @@ export function ClientsCTA() {
               Join hundreds of brands who trust P&P Packaging to deliver packaging that makes an impact.
             </p>
             
-            <Link href="/contact" className="self-start btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 shadow-sm mt-2 inline-flex items-center">
+            <Link href={CONTACT_HREF} className="self-start btn-pill bg-gold-600 text-teal-900 hover:bg-gold-500 shadow-sm mt-2 inline-flex items-center">
               Become Our Client <ArrowRight size={16} strokeWidth={1.5} className="ml-2" />
             </Link>
           </div>

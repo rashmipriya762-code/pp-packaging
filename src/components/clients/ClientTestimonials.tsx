@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
@@ -24,6 +25,14 @@ const testimonials = [
 ];
 
 export function ClientTestimonials() {
+  const scroller = useRef<HTMLDivElement>(null);
+
+  const scrollBy = (direction: 1 | -1) => {
+    const el = scroller.current;
+    if (!el) return;
+    el.scrollBy({ left: direction * (el.clientWidth * 0.8), behavior: "smooth" });
+  };
+
   return (
     <section className="bg-cream pt-12 pb-20">
       <div className="container-custom">
@@ -38,17 +47,33 @@ export function ClientTestimonials() {
           
           {/* Navigation Arrows */}
           <div className="flex items-center gap-2">
-            <button className="w-10 h-10 rounded-full border border-[#E5DCC9] flex items-center justify-center text-teal-900 hover:bg-cream-soft transition-colors">
-              <ChevronLeft size={18} strokeWidth={1.5} />
+            <button
+              type="button"
+              onClick={() => scrollBy(-1)}
+              aria-label="Previous testimonials"
+              aria-controls="client-testimonials"
+              className="w-10 h-10 rounded-full border border-cream-dark flex items-center justify-center text-teal-900 hover:bg-cream-soft transition-colors"
+            >
+              <ChevronLeft size={18} strokeWidth={1.5} aria-hidden="true" />
             </button>
-            <button className="w-10 h-10 rounded-full border border-[#E5DCC9] flex items-center justify-center text-teal-900 hover:bg-cream-soft transition-colors">
-              <ChevronRight size={18} strokeWidth={1.5} />
+            <button
+              type="button"
+              onClick={() => scrollBy(1)}
+              aria-label="Next testimonials"
+              aria-controls="client-testimonials"
+              className="w-10 h-10 rounded-full border border-cream-dark flex items-center justify-center text-teal-900 hover:bg-cream-soft transition-colors"
+            >
+              <ChevronRight size={18} strokeWidth={1.5} aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* Cards Container */}
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 snap-x snap-mandatory no-scrollbar pb-6 lg:pb-0">
+        <div
+          id="client-testimonials"
+          ref={scroller}
+          className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 snap-x snap-mandatory no-scrollbar pb-6 lg:pb-0"
+        >
           {testimonials.map((test, idx) => (
             <div 
               key={idx} 

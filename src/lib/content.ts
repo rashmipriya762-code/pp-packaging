@@ -3,6 +3,7 @@ import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 export const siteConfig = {
   name: "P&P Packaging",
+  url: "https://pppackaging.in",
   tagline: "India's Trusted Manufacturer of Custom Packaging",
   description:
     "P&P Packaging is a Mumbai-based manufacturer of premium custom bags and boxes for businesses across India. From eco-friendly tote bags to sturdy cardboard boxes, we deliver quality packaging that protects your products and elevates your brand.",
@@ -19,15 +20,6 @@ export const siteConfig = {
   },
   established: 2008,
 };
-
-export function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[&]/g, "and")
-    .replace(/[–—]/g, "-")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 export interface ProductItem {
   slug: string;
@@ -386,14 +378,112 @@ export const boxes: ProductItem[] = [
 
 export const ALL_PRODUCTS = [...bagsByMaterial, ...bagsByIndustry, ...boxes];
 
-export function getProductBySlug(slug: string): ProductItem | undefined {
-  return ALL_PRODUCTS.find((p) => p.slug === slug);
+/**
+ * The product taxonomy. Navigation, collection pages, the footer and the
+ * sitemap are all generated from this — never hand-typed — so a slug can only
+ * ever exist in one place.
+ */
+export type CategorySlug = "bags-by-material" | "bags-by-industry" | "boxes";
+
+export interface Category {
+  slug: CategorySlug;
+  label: string;
+  blurb: string;
+  items: ProductItem[];
 }
 
-export const blogPosts = [
-  { slug: "why-custom-packaging-matters", title: "Why Custom Packaging Is Your Best Marketing Investment", excerpt: "In a world where first impressions drive buying decisions, custom packaging has become a brand's most powerful silent salesperson.", date: "2024-08-10", readTime: "5 min read", category: "Branding", image: "/images/blog/blog1.jpg" },
-  { slug: "eco-friendly-packaging-guide", title: "The Complete Guide to Eco-Friendly Packaging for Indian Businesses", excerpt: "As sustainability becomes a customer expectation, Indian businesses are switching to eco-friendly packaging.", date: "2024-07-25", readTime: "7 min read", category: "Sustainability", image: "/images/blog/blog2.jpg" },
-  { slug: "packaging-for-festive-season", title: "Festive Packaging: Preparing Your Business for Diwali and Beyond", excerpt: "The festive season is India's biggest sales window. Here's how to prepare your packaging.", date: "2024-07-10", readTime: "4 min read", category: "Seasonal", image: "/images/blog/blog3.jpg" },
+export const CATEGORIES: Category[] = [
+  {
+    slug: "bags-by-material",
+    label: "Bags by Material",
+    blurb: "Explore our collection of packaging bags categorized by material, including paper, jute, cotton and more.",
+    items: bagsByMaterial,
+  },
+  {
+    slug: "bags-by-industry",
+    label: "Bags by Industry",
+    blurb: "Packaging bags tailored to the demands of specific industries, from e-commerce to agriculture.",
+    items: bagsByIndustry,
+  },
+  {
+    slug: "boxes",
+    label: "Boxes",
+    blurb: "Custom boxes including corrugated, rigid, mailer, thermacol, cake and sweet boxes.",
+    items: boxes,
+  },
+];
+
+export function getCategory(slug: string): Category | undefined {
+  return CATEGORIES.find((c) => c.slug === slug);
+}
+
+/**
+ * Look a product up by slug. Pass `category` to scope the lookup — without it
+ * `/boxes/paper-bags` would resolve and render a bag under the Boxes breadcrumb.
+ */
+export function getProductBySlug(
+  slug: string,
+  category?: CategorySlug
+): ProductItem | undefined {
+  const pool = category ? (getCategory(category)?.items ?? []) : ALL_PRODUCTS;
+  return pool.find((p) => p.slug === slug);
+}
+
+export function productHref(product: ProductItem): string {
+  return `/${product.parentCategory}/${product.slug}`;
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+  /**
+   * Stand-in artwork. The original paths (/images/blog/blog1.jpg …) pointed at
+   * files that were never committed; these are existing assets so nothing 404s.
+   * Replace with real article artwork.
+   */
+  image: string;
+  /**
+   * TODO(content): per-article body copy. Until this is filled in, every
+   * article renders the same placeholder text — see the article template.
+   */
+  body?: string[];
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "why-custom-packaging-matters",
+    title: "Why Custom Packaging Is Your Best Marketing Investment",
+    excerpt:
+      "In a world where first impressions drive buying decisions, custom packaging has become a brand's most powerful silent salesperson.",
+    date: "2024-08-10",
+    readTime: "5 min read",
+    category: "Branding",
+    image: PRODUCT_IMAGES.customPackaging,
+  },
+  {
+    slug: "eco-friendly-packaging-guide",
+    title: "The Complete Guide to Eco-Friendly Packaging for Indian Businesses",
+    excerpt:
+      "As sustainability becomes a customer expectation, Indian businesses are switching to eco-friendly packaging.",
+    date: "2024-07-25",
+    readTime: "7 min read",
+    category: "Sustainability",
+    image: PRODUCT_IMAGES.protectivePackaging,
+  },
+  {
+    slug: "packaging-for-festive-season",
+    title: "Festive Packaging: Preparing Your Business for Diwali and Beyond",
+    excerpt:
+      "The festive season is India's biggest sales window. Here's how to prepare your packaging.",
+    date: "2024-07-10",
+    readTime: "4 min read",
+    category: "Seasonal",
+    image: PRODUCT_IMAGES.corrugatedBoxes,
+  },
 ];
 
 export const productInquiryOptions = [

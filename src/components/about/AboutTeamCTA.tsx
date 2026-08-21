@@ -4,6 +4,7 @@ import { PRODUCT_IMAGES } from "@/lib/product-images";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { CONTACT_HREF } from "@/lib/navigation";
 
 export function AboutTeamCTA() {
   return (
@@ -24,7 +25,7 @@ export function AboutTeamCTA() {
               A team of passionate professionals working together to deliver packaging solutions that make a difference.
             </p>
             
-            <Link href="/contact" className="self-start btn-pill bg-gold-600 text-white hover:bg-gold-500 shadow-sm mt-2 inline-flex items-center">
+            <Link href={CONTACT_HREF} className="self-start btn-pill bg-gold-600 text-white hover:bg-gold-500 shadow-sm mt-2 inline-flex items-center">
               Meet Our Team <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
             </Link>
           </div>
@@ -33,8 +34,9 @@ export function AboutTeamCTA() {
           <div className="w-full md:w-[42%] relative overflow-hidden bg-teal-900 h-64 md:h-auto">
             <Image 
               src={PRODUCT_IMAGES.customPackaging} 
-              alt="P&P Packaging Team and Products"
+              alt=""
               fill
+              sizes="(max-width: 768px) 100vw, 42vw"
               className="object-cover"
             />
           </div>

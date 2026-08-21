@@ -1,12 +1,11 @@
-"use client";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
-
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 export function BlogHero() {
   return (
-    <section className="bg-cream pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden relative">
+    <section className="bg-cream pt-9 pb-16 md:pt-[68px] md:pb-20 overflow-hidden relative">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 bg-teal-900 rounded-[2.5rem] p-10 md:p-16 relative shadow-xl overflow-hidden">
           
@@ -29,12 +28,12 @@ export function BlogHero() {
               Explore expert insights, industry trends, and sustainable ideas shaping the future of packaging.
             </p>
             
-            <button className="btn-pill bg-cream text-teal-900 hover:bg-white shadow-sm inline-flex items-center">
-              Explore Articles 
-              <span className="ml-3 w-6 h-6 rounded-full bg-teal-900/10 flex items-center justify-center">
-                <ArrowRight size={14} strokeWidth={1.5} className="text-teal-900" />
+            <Link href="#articles" className="btn-pill bg-cream text-teal-900 hover:bg-white shadow-sm">
+              Explore Articles
+              <span className="w-6 h-6 rounded-full bg-teal-900/10 flex items-center justify-center">
+                <ArrowRight size={14} strokeWidth={1.5} aria-hidden="true" className="text-teal-900" />
               </span>
-            </button>
+            </Link>
           </div>
 
           {/* RIGHT: Image */}
@@ -45,8 +44,9 @@ export function BlogHero() {
             <div className="relative aspect-[5/4] w-full max-w-[600px] rounded-2xl overflow-hidden shadow-card z-10 bg-transparent">
               <Image 
                 src={PRODUCT_IMAGES.customPackaging} 
-                alt="P&P Packaging"
+                alt=""
                 fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-contain"
                 priority
               />

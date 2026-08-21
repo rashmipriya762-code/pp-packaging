@@ -1,5 +1,4 @@
-"use client";
-
+import Link from "next/link";
 import { ShoppingCart, Coffee, Droplet, Pill, Monitor, ShoppingBag } from "lucide-react";
 
 const industries = [
@@ -16,23 +15,27 @@ export function IndustriesRow() {
     <section className="bg-cream pt-12 pb-8 md:pt-16 md:pb-10">
       <div className="container-custom">
         <div className="flex flex-col items-center">
-          <p className="eyebrow mb-3 font-bold tracking-widest text-xs text-teal-900/60 uppercase text-center">INDUSTRIES WE SERVE</p>
+          <p className="eyebrow mb-3 text-teal-900/60 text-center">Industries We Serve</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-teal-900 leading-[1.1] text-center mb-16">Trusted by Diverse Industries</h2>
           
           <div className="flex flex-wrap justify-center items-end gap-10 md:gap-16 lg:gap-24 w-full">
             {industries.map((industry, idx) => {
               const Icon = industry.icon;
               return (
-                <div key={idx} className="flex flex-col items-center group cursor-default">
+                <Link
+                  key={idx}
+                  href="/bags-by-industry"
+                  className="flex flex-col items-center group"
+                >
                   <Icon 
                     size={36} 
                     className="text-teal-900 group-hover:-translate-y-1 transition-transform duration-300" 
                     strokeWidth={1.25} 
                   />
-                  <span className="font-body font-medium text-teal-900 text-sm mt-4 text-center">
+                  <span className="font-body font-medium text-teal-900 text-sm mt-4 text-center group-hover:text-gold-600 transition-colors">
                     {industry.label}
                   </span>
-                </div>
+                </Link>
               );
             })}
           </div>

@@ -1,7 +1,6 @@
-"use client";
-
-import { Check, ArrowRight, Download } from "lucide-react";
+import { Check } from "lucide-react";
 import Image from "next/image";
+import { EnquireNowButton } from "@/components/shared/EnquireNowButton";
 
 interface SpecItem {
   label: string;
@@ -9,13 +8,20 @@ interface SpecItem {
 }
 
 interface ProductDetailsProps {
+  productName: string;
   description: string;
   features: string[];
   specs: SpecItem[];
   imageUrl: string;
 }
 
-export function ProductDetails({ description, features, specs, imageUrl }: ProductDetailsProps) {
+export function ProductDetails({
+  productName,
+  description,
+  features,
+  specs,
+  imageUrl,
+}: ProductDetailsProps) {
   return (
     <section className="bg-cream section-padding">
       <div className="container-custom">
@@ -37,9 +43,11 @@ export function ProductDetails({ description, features, specs, imageUrl }: Produ
               ))}
             </ul>
 
-            <button className="self-start btn-pill bg-teal-900 text-white hover:bg-teal-800 shadow-sm">
-              Get Custom Quote <ArrowRight size={16} className="ml-1" />
-            </button>
+            <EnquireNowButton
+              product={productName}
+              label="Get Custom Quote"
+              className="self-start btn-pill btn-teal shadow-sm"
+            />
           </div>
 
           {/* CENTER: Visual Composition */}
@@ -57,7 +65,13 @@ export function ProductDetails({ description, features, specs, imageUrl }: Produ
             </div>
             
             <div className="relative w-64 h-64 md:w-80 md:h-80 drop-shadow-2xl">
-              <Image src={imageUrl} alt="Product Spec Photo" fill className="object-contain" />
+              <Image
+                src={imageUrl}
+                alt=""
+                fill
+                sizes="(max-width: 768px) 256px, 320px"
+                className="object-contain"
+              />
             </div>
           </div>
 
@@ -73,15 +87,6 @@ export function ProductDetails({ description, features, specs, imageUrl }: Produ
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="flex flex-col gap-3 px-2">
-              <button className="flex items-center gap-3 text-sm text-teal-900 hover:text-gold-600 transition-colors">
-                <Download size={18} strokeWidth={1.5} /> Download Datasheet
-              </button>
-              <button className="flex items-center gap-3 text-sm text-teal-900 hover:text-gold-600 transition-colors">
-                <Download size={18} strokeWidth={1.5} /> Sustainability Guide
-              </button>
             </div>
           </div>
 

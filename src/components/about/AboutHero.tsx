@@ -1,12 +1,11 @@
-"use client";
-import { PRODUCT_IMAGES } from "@/lib/product-images";
-
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { PRODUCT_IMAGES } from "@/lib/product-images";
 
 export function AboutHero() {
   return (
-    <section className="bg-cream pt-[120px] pb-16 md:pt-[160px] md:pb-24 overflow-hidden relative">
+    <section className="bg-cream pt-11 pb-16 md:pt-[84px] md:pb-24 overflow-hidden relative">
       <div className="container-custom">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
@@ -25,9 +24,10 @@ export function AboutHero() {
               At P&P Packaging, we believe great packaging does more than protect a product — it builds connections, delivers promises, and shapes a better tomorrow.
             </p>
             
-            <button className="btn-pill bg-teal-900 text-white hover:bg-teal-800 shadow-md">
-              Our Journey <ArrowRight size={16} strokeWidth={1.5} className="ml-1" />
-            </button>
+            <Link href="#our-story" className="btn-pill btn-teal shadow-md">
+              Our Journey
+              <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
           </div>
 
           {/* RIGHT: Image */}
@@ -39,8 +39,9 @@ export function AboutHero() {
             <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-card z-10">
               <Image 
                 src={PRODUCT_IMAGES.corrugatedBoxes} 
-                alt="P&P Packaging Solutions"
+                alt="Custom packaging produced by P&amp;P Packaging"
                 fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover"
                 priority
               />

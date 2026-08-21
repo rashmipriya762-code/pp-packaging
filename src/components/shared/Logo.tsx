@@ -11,10 +11,15 @@ export function Logo({ className = "", isFooter = false }: LogoProps) {
     <Link href="/" className={`flex items-center gap-3 shrink-0 ${className}`}>
       {/* Logo Mark */}
       <div className="relative w-12 h-12 flex-shrink-0">
+        {/* p_p_logo.png is the only logo asset with a real alpha channel.
+            p_p_logo.jpg and logo.png both had the transparency checkerboard
+            flattened into them, so they painted an opaque near-white square
+            on the cream navbar. */}
         <Image
-          src="/images/p_p_logo.jpg"
-          alt="P&P Packaging Logo"
+          src="/images/p_p_logo.png"
+          alt=""
           fill
+          sizes="48px"
           className="object-contain"
           priority
         />
