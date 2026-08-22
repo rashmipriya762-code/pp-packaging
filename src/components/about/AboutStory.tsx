@@ -11,8 +11,8 @@ const milestones = [
 
 export function AboutStory() {
   return (
-    <section className="bg-cream pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
-      <div className="container-custom">
+    <section className="bg-[#F4ECE0] rounded-[2rem] md:rounded-[3rem] py-12 md:py-16 overflow-hidden w-full">
+      <div className="px-6 md:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
           {/* LEFT: Text */}

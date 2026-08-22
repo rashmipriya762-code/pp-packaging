@@ -7,9 +7,9 @@ import { ArrowRight } from "lucide-react";
 
 export function AboutTeamCTA() {
   return (
-    <section className="bg-cream pt-8 pb-16 md:pb-24">
-      <div className="container-custom">
-        <div className="relative bg-teal-900 rounded-2xl overflow-hidden flex flex-col md:flex-row items-stretch min-h-[320px] shadow-xl">
+    <section className="py-0 w-full">
+      <div className="w-full">
+        <div className="relative bg-teal-900 rounded-[2rem] md:rounded-[3rem] overflow-hidden flex flex-col md:flex-row items-stretch min-h-[320px] shadow-xl">
           
           {/* COLUMN 1: text (LEFT side for this mirrored variant) */}
           <div className="w-full md:w-[58%] flex flex-col justify-center px-10 py-12 md:px-16 lg:px-20 gap-6">

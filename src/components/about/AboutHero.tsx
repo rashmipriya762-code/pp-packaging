@@ -6,8 +6,8 @@ import { ArrowRight } from "lucide-react";
 
 export function AboutHero() {
   return (
-    <section className="bg-cream pt-[120px] pb-16 md:pt-[160px] md:pb-24 overflow-hidden relative">
-      <div className="container-custom">
+    <section className="bg-[#F4ECE0] rounded-[2rem] md:rounded-[3rem] pt-[120px] pb-12 md:pt-[140px] md:pb-16 overflow-hidden relative w-full">
+      <div className="px-6 md:px-10 lg:px-16">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           
           {/* LEFT: Text */}

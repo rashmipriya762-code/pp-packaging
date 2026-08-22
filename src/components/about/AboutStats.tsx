@@ -11,8 +11,8 @@ const stats = [
 
 export function AboutStats() {
   return (
-    <section className="bg-teal-900 py-12 md:py-16 w-full border-b border-teal-900">
-      <div className="container-custom">
+    <section className="bg-teal-900 rounded-[2rem] md:rounded-[3rem] py-10 md:py-14 w-full">
+      <div className="px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8 md:gap-12 lg:divide-x divide-white/10">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;

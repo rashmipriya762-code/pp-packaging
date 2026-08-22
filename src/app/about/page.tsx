@@ -13,11 +13,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="bg-cream min-h-screen">
-      <AboutHero />
-      <AboutStats />
-      <AboutStory />
-      <AboutValues />
-      <AboutTeamCTA />
+      {/* About-page-specific card stack — scoped gap, no global changes */}
+      <div className="px-4 md:px-6 lg:px-8 pb-8 flex flex-col gap-4">
+        <AboutHero />
+        <AboutStats />
+        <AboutStory />
+        <AboutValues />
+        <AboutTeamCTA />
+      </div>
     </main>
   );
 }

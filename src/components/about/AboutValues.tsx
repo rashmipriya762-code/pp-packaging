@@ -27,8 +27,8 @@ const values = [
 
 export function AboutValues() {
   return (
-    <section className="bg-cream pt-8 pb-16 md:pt-12 md:pb-24">
-      <div className="container-custom">
+    <section className="bg-[#F4ECE0] rounded-[2rem] md:rounded-[3rem] py-12 md:py-16 w-full">
+      <div className="px-6 md:px-10 lg:px-16">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-12">
           <p className="eyebrow text-gold-600 mb-4">OUR VALUES</p>
