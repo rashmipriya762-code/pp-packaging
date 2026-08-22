@@ -52,7 +52,7 @@ export default function BoxesCollectionPage() {
         subtitleEmphasis="Built To Protect."
         description="From sturdy corrugated shipping boxes to elegant retail packaging, explore our comprehensive range of box solutions tailored for every industry."
         countText={`Showing 1–${boxesCollection.length} of ${boxesCollection.length} Collections`}
-        image={PRODUCT_IMAGES.corrugatedBoxes}
+        theme="original"
       />
       
       <CollectionGrid items={boxesCollection} />

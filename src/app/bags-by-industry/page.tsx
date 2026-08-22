@@ -30,7 +30,7 @@ export default function BagsByIndustryPage() {
         subtitleEmphasis="Tailored For You."
         description="Every industry has unique packaging requirements. Explore our specialized solutions designed to meet the exact demands of your sector."
         countText={`Showing 1–${industryCollection.length} of ${industryCollection.length} Collections`}
-        image={PRODUCT_IMAGES.flexiblePackaging}
+        theme="blue"
       />
       
       <CollectionGrid items={industryCollection} />

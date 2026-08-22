@@ -30,7 +30,7 @@ export default function BagsByMaterialPage() {
         subtitleEmphasis="Crafted With Care."
         description="Discover our extensive range of packaging bags categorized by material. From sustainable jute to premium cotton, find the perfect fabric for your brand."
         countText={`Showing 1–${materialCollection.length} of ${materialCollection.length} Collections`}
-        image={PRODUCT_IMAGES.flexiblePackaging}
+        theme="original"
       />
       
       <CollectionGrid items={materialCollection} />

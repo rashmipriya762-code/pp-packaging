@@ -36,14 +36,14 @@ export function ClientsHero() {
             </button>
           </div>
 
-          {/* Right Column (Image Area) */}
+          {/* Right Column (Image Area with Light Cream Box) */}
           <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-0">
-             <div className="absolute inset-0 w-full h-full">
+             <div className="absolute inset-0 w-full h-full bg-[#F4ECE0] rounded-tl-[1.5rem] md:rounded-tl-[2rem] rounded-bl-[4rem] md:rounded-bl-[8rem] lg:rounded-bl-[14rem] overflow-hidden">
                <Image 
-                 src={PRODUCT_IMAGES.rigidBoxes} 
+                 src="/images/hero-products.jpg" 
                  alt="P&P Packaging Boxes and Tape"
                  fill
-                 className="object-cover rounded-tl-[1.5rem] md:rounded-tl-[2rem] rounded-bl-[4rem] md:rounded-bl-[8rem] lg:rounded-bl-[14rem] object-right mix-blend-darken"
+                 className="object-cover object-right mix-blend-darken"
                  priority
                />
              </div>
