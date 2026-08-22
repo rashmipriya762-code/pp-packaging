@@ -23,46 +23,41 @@ export function CollectionHero({
 }: CollectionHeroProps) {
   return (
     <>
-      <section className="bg-cream pt-10 pb-8">
-        <div className="container-custom">
-          {/* Main Hero Container */}
-          <div className="relative rounded-card overflow-hidden bg-teal-900 flex flex-col lg:flex-row shadow-sm min-h-[440px]">
+      <section className="bg-[#FAF7F2] pt-6 pb-3 md:pt-8 md:pb-4 px-4 md:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="bg-[#F4ECE0] rounded-tl-[2rem] md:rounded-tl-[3rem] rounded-bl-[2rem] md:rounded-bl-[3rem] rounded-tr-[1.5rem] md:rounded-tr-[2rem] rounded-br-[0.5rem] md:rounded-br-[1rem] flex flex-col lg:flex-row items-stretch overflow-hidden shadow-sm w-full">
             
-            {/* LEFT: Text Content (~55%) */}
-            <div className="w-full lg:w-[55%] px-10 py-16 lg:px-16 lg:py-20 flex flex-col justify-center items-start z-10 relative">
-              <p className="font-body text-[10px] font-bold tracking-[0.15em] uppercase text-gold-600 mb-5">
+            {/* Left Column (Text) */}
+            <div className="w-full lg:w-[45%] flex flex-col items-start px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shrink-0">
+              <p className="eyebrow text-gold-600 mb-6 font-bold tracking-widest text-xs uppercase">
                 {eyebrow}
               </p>
               
-              <h1 className="font-display text-5xl lg:text-[64px] leading-[1.05] mb-6 tracking-tight">
-                <span className="block text-white font-normal">{title}</span>
-                <span className="block text-gold-400 font-normal">{subtitleEmphasis}</span>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight text-[#16323D] mb-6">
+                <span className="block font-normal">{title}</span>
+                <span className="block italic text-[#C1872E] mt-1">{subtitleEmphasis}</span>
               </h1>
               
-              <p className="font-body text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-[420px]">
+              <p className="font-body text-[#5C6B72] text-base md:text-lg leading-relaxed mb-10 max-w-md">
                 {description}
               </p>
               
-              <button className="btn-pill bg-cream text-teal-900 hover:bg-white shadow-sm font-semibold transition-all">
-                Request a Custom Quote <ArrowRight size={16} strokeWidth={2} className="ml-1" />
+              <button className="px-6 py-3 rounded-full border border-[#16323D] bg-[#16323D] text-white hover:bg-[#1E4653] text-sm font-bold flex items-center transition-colors">
+                Request a Custom Quote <ArrowRight size={16} strokeWidth={2} className="ml-2" />
               </button>
             </div>
 
-            {/* RIGHT: Image Area (~45%) */}
-            <div className="w-full lg:w-[45%] relative min-h-[300px] lg:min-h-full">
-              {/* Abstract Circular Backdrop */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] bg-[#E8D9C5] rounded-full opacity-[0.25] blur-[60px]" />
-              
-              {/* Product Image */}
-              <div className="absolute inset-0 z-10 p-6 lg:p-0 flex items-center justify-center lg:block">
-                <Image 
-                  src={image}
-                  alt="Collection Showcase"
-                  fill
-                  className="object-contain lg:object-cover"
-                  priority
-                />
-              </div>
+            {/* Right Column (Image Area) */}
+            <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-0">
+               <div className="absolute inset-0 w-full h-full">
+                 <Image 
+                   src={image}
+                   alt="Collection Showcase"
+                   fill
+                   className="object-cover rounded-tl-[1.5rem] md:rounded-tl-[2rem] rounded-bl-[4rem] md:rounded-bl-[8rem] lg:rounded-bl-[14rem] object-right mix-blend-darken"
+                   priority
+                 />
+               </div>
             </div>
             
           </div>

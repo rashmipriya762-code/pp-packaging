@@ -6,51 +6,40 @@ import { ArrowRight } from "lucide-react";
 
 export function BlogHero() {
   return (
-    <section className="bg-cream pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden relative">
-      <div className="container-custom">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 bg-teal-900 rounded-[2.5rem] p-10 md:p-16 relative shadow-xl overflow-hidden">
+    <section className="bg-[#FAF7F2] pt-6 pb-3 md:pt-8 md:pb-4 px-4 md:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="bg-[#F4ECE0] rounded-tl-[2rem] md:rounded-tl-[3rem] rounded-bl-[2rem] md:rounded-bl-[3rem] rounded-tr-[1.5rem] md:rounded-tr-[2rem] rounded-br-[0.5rem] md:rounded-br-[1rem] flex flex-col lg:flex-row items-stretch overflow-hidden shadow-sm w-full">
           
-          {/* Ambient background glow inside the teal container */}
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E8D9C5]/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/3 translate-x-1/3" />
-
-          {/* LEFT: Text */}
-          <div className="w-full lg:w-[45%] flex flex-col items-start relative z-10">
-            <p className="font-body text-gold-400 text-[10px] font-bold tracking-[0.15em] uppercase mb-6">
-              OUR BLOG
-            </p>
+          {/* Left Column (Text) */}
+          <div className="w-full lg:w-[45%] flex flex-col items-start px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shrink-0">
+            <p className="eyebrow text-gold-600 mb-6 font-bold tracking-widest text-xs uppercase">OUR BLOG</p>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              <span className="block font-normal text-white mb-1">Insights That</span>
-              <span className="block italic text-gold-400">Inspire Better</span>
-              <span className="block italic text-gold-400">Packaging.</span>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] tracking-tight text-[#16323D] mb-6">
+              <span className="block font-normal">Insights That</span>
+              <span className="block italic text-[#C1872E] mt-1">Inspire Better</span>
+              <span className="block italic text-[#C1872E]">Packaging.</span>
             </h1>
             
-            <p className="font-body text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-[400px]">
+            <p className="font-body text-[#5C6B72] text-base md:text-lg leading-relaxed mb-10 max-w-md">
               Explore expert insights, industry trends, and sustainable ideas shaping the future of packaging.
             </p>
             
-            <button className="btn-pill bg-cream text-teal-900 hover:bg-white shadow-sm inline-flex items-center">
-              Explore Articles 
-              <span className="ml-3 w-6 h-6 rounded-full bg-teal-900/10 flex items-center justify-center">
-                <ArrowRight size={14} strokeWidth={1.5} className="text-teal-900" />
-              </span>
+            <button className="px-6 py-3 rounded-full border border-[#16323D] bg-[#16323D] text-white hover:bg-[#1E4653] text-sm font-bold flex items-center transition-colors">
+              Explore Articles <ArrowRight size={16} strokeWidth={2} className="ml-2" />
             </button>
           </div>
 
-          {/* RIGHT: Image */}
-          <div className="w-full lg:w-[55%] relative flex justify-center lg:justify-end z-10">
-            {/* Soft cream/tan backdrop */}
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-[#E8D9C5]/90 rounded-full blur-2xl z-0" />
-            
-            <div className="relative aspect-[5/4] w-full max-w-[600px] rounded-2xl overflow-hidden shadow-card z-10 bg-transparent">
-              <Image 
-                src={PRODUCT_IMAGES.customPackaging} 
-                alt="P&P Packaging"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+          {/* Right Column (Image Area) */}
+          <div className="w-full lg:w-[55%] relative min-h-[400px] lg:min-h-0">
+             <div className="absolute inset-0 w-full h-full">
+               <Image 
+                 src={PRODUCT_IMAGES.customPackaging} 
+                 alt="P&P Packaging"
+                 fill
+                 className="object-cover rounded-tl-[1.5rem] md:rounded-tl-[2rem] rounded-bl-[4rem] md:rounded-bl-[8rem] lg:rounded-bl-[14rem] object-right mix-blend-darken"
+                 priority
+               />
+             </div>
           </div>
           
         </div>
